@@ -16,7 +16,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/bpmn")
 public class BpmnValidationController {
-
     /**
      * Validates a BPMN file.
      *
@@ -26,7 +25,7 @@ public class BpmnValidationController {
     @PostMapping("/validate")
     public ResponseEntity<Map<String, Object>> validateBpmn(@RequestParam("file") MultipartFile file) {
         Map<String, Object> response = new HashMap<>();
-
+        System.out.println(file.getOriginalFilename());
         // Check if the file is empty
         if (file.isEmpty()) {
             response.put("result", false);
