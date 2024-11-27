@@ -25,7 +25,6 @@ public class BpmnValidationController {
         }
 
         try {
-            // Read BPMN model from the uploaded file
             BpmnModelInstance modelInstance = Bpmn.readModelFromStream(file.getInputStream());
 
             // Validate the BPMN model
