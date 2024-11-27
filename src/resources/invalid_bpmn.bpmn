@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="Definition_2">
+  <bpmn:process id="Process_2" isExecutable="true">
+    <bpmn:task id="Task_1"/>
+  </bpmn:process>
+</bpmn:definitions>
