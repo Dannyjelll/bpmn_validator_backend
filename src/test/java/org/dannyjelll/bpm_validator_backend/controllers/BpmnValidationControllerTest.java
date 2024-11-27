@@ -3,6 +3,7 @@ package org.dannyjelll.bpm_validator_backend.controllers;
 import org.camunda.bpm.model.bpmn.Bpmn;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,7 @@ class BpmnValidationControllerTest {
         controller = new BpmnValidationController();
     }
 
+    @DisplayName("Testing the validation of a BPMN file with a valid file")
     @Test
     void validateBpmnWithValidFile() throws Exception {
         MultipartFile file = new MockMultipartFile("file", "valid.bpmn", "text/xml", "<bpmn></bpmn>".getBytes());
@@ -44,6 +46,7 @@ class BpmnValidationControllerTest {
         }
     }
 
+    @DisplayName("Testing the validation of a BPMN file with an invalid file")
     @Test
     void validateBpmnWithInvalidFile() throws Exception {
         MultipartFile file = new MockMultipartFile("file", "invalid.bpmn", "text/xml", "<bpmn>".getBytes());
@@ -57,6 +60,8 @@ class BpmnValidationControllerTest {
             assertEquals("Invalid BPMN file", response.getBody().get("error"));
         }
     }
+
+    @DisplayName("Testing the validation of a BPMN file with an empty file")
     @Test
     void validateBpmnWithEmptyFile() throws IOException {
         MultipartFile file = new MockMultipartFile("file", "empty.bpmn", "text/xml", new byte[0]);
