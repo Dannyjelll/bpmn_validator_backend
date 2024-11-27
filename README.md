@@ -25,3 +25,5 @@ curl -X POST http://localhost:8080/api/bpmn/validate \
 ```
 
 Replace `path/to/your/bpmnfile.bpmn` with the actual path to your BPMN file.
+
+Further REST documentation can be found after running the Endpoint vie http://localhost:8080/swagger-ui/index.html 
