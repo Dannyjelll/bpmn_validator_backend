@@ -7,7 +7,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayInputStream;
 import java.util.HashMap;
@@ -43,12 +42,6 @@ public class BpmnValidationController {
         }
     }
 
-
-    // Helper schema class for Swagger documentation
-    private static class ValidationResponse {
-        public Boolean result;
-        public String error;
-    }
     @PostMapping(value = "/validate/xml", consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 
     public ResponseEntity<Map<String, Object>> validateBpmnXml(@RequestBody String bpmnXml) {
