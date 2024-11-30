@@ -56,7 +56,6 @@ public class BpmnValidationController {
         try {
             BpmnModelInstance modelInstance = Bpmn.readModelFromStream(new ByteArrayInputStream(bpmnXml.getBytes()));
             Bpmn.validateModel(modelInstance);
-
             response.put("result", true);
             response.put("error", null);
             return ResponseEntity.ok(response);
@@ -66,4 +65,6 @@ public class BpmnValidationController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
     }
+
+    // TODO: Add algorithmic quality eval algo like https://github.com/freebpmnquality/qualibpmn and have LLM only for completeness check
 }
